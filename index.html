@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.0,maximum-scale=1.0">
+    <title>Memory Game</title>
+
+    <style>
+
+		table{
+			border: 1px solid;
+		}
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .main_btn {
+            float: right;
+            padding: 0 10px;
+            margin: 0 10px;
+        }
+
+        .element_class{
+            margin: 10px;
+            cursor: pointer;
+            min-width: 60px;
+            min-height: 60px;
+        }
+        .shadow {
+            -webkit-box-shadow: 1px 1px 12px 7px #ccc;
+            -moz-box-shadow:    1px 1px 12px 7px #ccc;
+            box-shadow:         1px 1px 12px 7px #ccc;
+
+        }
+        #alert_box{
+            font-size: large;
+            text-align: center;
+            font-weight: bold;
+            width: 40%;position: fixed;left: 50%;margin-left: -20%;min-height: 25px;background-color: white;border: 1px solid;bottom: 0
+        }
+
+        @media screen and (max-width: 480px)
+        {
+            #alert_box{
+                width: 100% !important;
+                left: 0;margin-left: 0;
+            }
+
+            #input_div{
+                width: 100% !important;
+            }
+
+            input[type="number"] {
+                width:40px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+
+<h1 style="text-align: center">The Memory Game</h1>
+
+<div id="input_div" style="margin: 0 auto;width:400px">
+    <hr>
+
+    Input : <input class="input_number" type="number" value="4" min="1" max="1000"> X <input class="input_number" type="number" value="4" min="1" max="1000">
+
+    <!--<button class="main_btn" value="Reset" onclick="resetFunc();">Reset</button>-->
+    <button class="main_btn" value="Play" onclick="playFunc();">Play / Reset</button>
+
+    <hr>
+</div>
+<table id="main_area" style="margin: 0 auto;"></table>
+
+<div id="alert_box"></div>
+
+
+
+<script id="hidden-template" type="text/x-custom-template">
+        <div class="element_class" onclick="elementClicked(this)">
+            <div style="width: 100%;">
+                <img class="shadow" src="icon.png">
+            </div>
+            <div class="num_div" style="width: 100%;display: none;font-size: 50px;font-weight: bold;line-height: 100px;">
+
+            </div>
+        </div>
+</script>
+
+<script src="source.js"></script>
+</body>
+
+</html>
